@@ -1,0 +1,236 @@
+\documentclass[a4paper,12pt,twoside,BCOR=10mm]{scrbook}
+
+% Packages
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[icelandic, english]{babel}
+\usepackage{t1enc}
+\usepackage{graphicx}
+\usepackage[intoc]{nomencl}
+\usepackage{enumerate,color}
+\usepackage{url}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{appendix}
+\usepackage{eso-pic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{natbib}
+\usepackage[nottoc]{tocbibind}
+\usepackage[sort&compress,authoryear]{natbib}
+\usepackage[sf,normalsize]{subfigure}
+\usepackage[format=plain,labelformat=simple,labelsep=colon]{caption}
+\usepackage{placeins}
+\usepackage{tabularx}
+% Configurations
+\graphicspath{{figs/}}
+
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0cm}
+\raggedbottom
+% \setkomafont{subsection}{\normalfont\sffamily}
+
+% Eins og templatið á að vera
+% \setkomafont{captionlabel}{\itshape}
+% \setkomafont{caption}{\itshape}
+
+% Mun fallegri lausn
+\setkomafont{captionlabel}{\itshape}
+\setkomafont{caption}{\itshape}
+\setkomafont{section}{\FloatBarrier\Large}
+\setcapwidth[l]{\textwidth}
+\setcapindent{1em}
+
+
+% Times new roman
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+
+%%%%%%%%%%% MODIFY THESE LINES ONLY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\thesisyear{2015}       						% Year thesis submitted
+\def\thesismonth{September}						% Month thesis submitted
+\def\thesisauthor{Svava Sigurðardóttir}					% Thesis authoreiningaraðferðinni
+\def\thesistitle{Hvenær á að endurgefa erfðaupplýsingar um einstakling sem fást úr vísindalegri erfðarannsókn en hafa klíníska þýðingu?} 						% Title of thesis
+%\def\thesisshorttitle{XXShort title (50 characters including spaces)} 	% Title of thesis
+\def\thesiscredits{30} 							% Credits awarded for the project
+\def\thesissubject{Hagnýt siðfræði}
+\def\thesiskind{MA}							% Masters of PhD thesis
+\def\thesiskindformal{Magister Artium}				% Masters of PhD thesis
+\def\thesisnroftutors{1}						% Number of tutors
+\def\thesisschool{Hugvísindasvið}		% School
+\def\thesisfaculty{Sagnfræði- og heimspekideild}	% Faculty
+\def\thesisaddress{Sæmundargötu 2}				% Office address
+\def\thesispostalcode{101 Reykjavik}			% Office address
+\def\thesistelephone{525 4400}						% Office telephone
+%\def\thesispublisher{XX}						% Publisher
+\def\thesistutors{Vilhjálmur Árnason}
+%\def\thesisrepresentative{XXNN3}					% Tutors name
+%\def\thesiscommittee{XXNN4 \\ XXNN5 }
+%\def\thesiskeywords{Keyword1, Keyword2, Keyword3}			% Keywords
+%\def\thesisISBN{XX}           						% Thesis ISBN number
+%\def\thesisdedication{Dedication}
+\def\thesisPrinting{Háskólaprent, Fálkagata 2, 107 Reykjavík}
+
+% Hyphenation reglur
+%\hyphenation{erfða}
+
+% Function to add footer to frontpage
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{
+\vfill
+\centering
+\hspace*{-0.6cm}
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{HI-foot}}}
+\setlength{\unitlength}{\paperwidth}
+\begin{picture}(0,0)(0,-0.15)
+\put(0,0){\color{white}\parbox{1\paperwidth}{\centering\bfseries\sffamily \Large \thesisfaculty \\
+Háskóli Íslands\\
+\thesisyear}}
+\end{picture}
+}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\AddToShipoutPicture*{\BackgroundPic}
+%
+\begin{center}
+\vspace*{1cm}
+\includegraphics[width=43.6mm]{UI-logo}\\
+\vspace*{2.0cm}
+\huge \sffamily \bfseries \thesistitle
+
+\vspace*{3cm}
+\normalfont \Large \sffamily \thesisauthor
+\AddToShipoutPicture*{\BackgroundPic}
+\vfill
+
+\end{center}
+
+\newpage 
+\thispagestyle{empty} \mbox{}
+\newpage
+\thispagestyle{empty}
+\begin{flushright}
+\normalsize \textbf{\sffamily{Háskóli Íslands}} \\
+\vspace*{0.5cm}
+\normalsize \textbf{\sffamily{Hugvísindasvið}} \\
+\vspace*{0.5cm}
+\normalsize \textbf{\sffamily{Hagnýt siðfræði}} \\
+\vspace*{3.0cm}
+\begin{center}
+\Large \textbf{\sffamily{\MakeUppercase{\thesistitle}}} \\
+\end{center}
+\vspace*{7.5cm}
+\normalsize \textbf{Ritgerð til MA-prófs í hagnýtri siðfræði} \\
+\normalsize Heilbrigðis- og lífsiðfræði \\
+\vspace*{1.0cm}
+\normalsize \textbf{\thesisauthor} \\
+\normalsize Kt.: 160771-4109 \\
+\vspace*{1.0cm}
+\large
+\ifnum\thesisnroftutors >1 Leiðbeinendur \\ \thesistutors \\ \vspace*{0.4cm}
+\else \normalsize \textbf{Leiðbeinandi: \thesistutors} \\
+\thesismonth~\thesisyear
+\newpage
+\end{flushright}
+ \newpage
+ \thispagestyle{empty}
+ \mbox{} \vfill
+% \setcounter{page}{0} \renewcommand{\baselinestretch}{1.5}\normalsize
+%\sffamily{\thesistitle} \\
+%\sffamily{\thesisshorttitle} \\
+%\thesiscredits ~ECTS thesis submitted in partial fulfillment of a \thesiskind~degree in \thesissubject
+%\\ \\
+Copyright \textcopyright~\thesisyear~ \thesisauthor \\
+All rights reserved \\
+
+
+\thesisfaculty \\
+\thesisschool \\
+Háskóli Íslands \\
+\thesisaddress \\
+\thesispostalcode, Reykjavík \\
+Ísland
+
+Sími: \thesistelephone \\ \\
+\vspace*{\lineskip}
+
+Bibliographic information: \\
+\thesisauthor, \thesistitle, \thesiskind~ritgerð, \thesisyear, \thesisfaculty, Háskóli Íslands. \\
+
+%ISBN~\thesisISBN
+
+Printing: \thesisPrinting \\
+Reykjavík, Ísland, \thesismonth~\thesisyear \\
+\newpage
+\thispagestyle{empty} \mbox{}
+\vfill
+\begin{center}
+\textit{,,Það er ekki hægt að vernda réttindi einstaklingsins án þess að vernda líka velferð samfélagsins sem hann tilheyrir''}
+\end{center}
+\begin{flushright}
+\small{(Habermas)}
+\end{flushright}
+\vfill 
+
+\thispagestyle{empty}
+\cleardoublepage
+\end{titlepage}
+
+%Tileinkun skal birtast á oddatölu blaðsíðu (hægri síðu).}
+\pagenumbering{roman}
+
+\setcounter{page}{7}
+\section*{\huge Ágrip}
+Fram að þessu hafa siðferðileg viðmið, regluverk og lög um gagnagrunna verið á þann veg að þau standi vörð um greinarmun og skil á milli vísindalegra erfðarannsókna og klínískrar umönnunar. Skýr skil hafa jafnframt verið á milli vísindalegra erfðarannsókna og klínískra erfðarannsókna hvað tilgang og markmið varðar, hlutverkabundar skyldur og ábyrgð fagfólks á hvoru sviði fyrir sig sem og réttindi þátttakenda slíkra rannsókna. Á síðustu misserum hafa þessi mörk hins vegar verið að færast til og umræður snúist að miklu leyti um það hvenær eigi að endurgefa einstaklingi erfðaupplýsingar sem fást úr vísindalegri erfðarannsókn en hafa klíníska þýðingu. Meginviðfangsefni ritgerðarinnar er að leita svara við þessari spurningu og sú leið sem valin er kallast siðferðileg ákvörðun eða aðstæðubundinn siðadómur. Helstu niðurstöður eru þær að það er siðferðilega verjandi að endurgefa slíkar upplýsingar í afmörkuðum tilvikum að uppfylltum ákveðnum skilyrðum um réttmæti endurgjafar. Eru skilyrðin: (i) Niðurstaða bendir til lífshættulegs ástands einstaklingsins eða umtalsverðrar áhættu, (ii) hægt er að bregðast við með klínískri umönnun (meðferð, forvörn, eftirliti), (iii) áreiðanleiki niðurstaðna er tryggður, (iv) ávinningur af upplýsingum er meiri en áhætta og (v) þátttakandi hefur samþykkt að fá birtar niðurstöður. Ef þátttakandi samþykkir skilyrði (v) um endurgjöf upplýsinga þá má veita honum upplýsingar að uppfylltum öllum skilyrðum. Ég færi rök fyrir því að ef þátttakandi hafnar skilyrði (v) þá geti það samt sem áður vikið í undantekningartilfellum, ef skilyrði (i) er uppfyllt. Mat mitt er að þessi tilvik séu meðhöndluð innan heilbrigðiskerfisins og endurgjöf sé veitt af fagfólki sem er sérhæft í erfðaráðgjöf. Auk þess tel ég að veita ætti einstaklingi slíkar upplýsingar í samtali, augliti til auglitis. Varðandi stefnumótun um málefni endurgjafar þá tel ég að miða ætti að því að finna tengingu á milli vísindalegra erfðarannsókna og klínískrar umönnunar, eingöngu þannig að hægt sé að koma upplýsingum í þessum ákveðnum tilvikum til heilbrigðiskerfisins, en ekki afmá skilin á milli.
+\vfill \vspace*{1cm}
+\section*{\huge Abstract}
+Until now, the ethical guidelines, regulations and legislation on databases have been in such a way as to safeguard the distinction and separation between scientific genetic research and clinical care. Clear distinctions have also been between genetic and clinical research with regards to purpose and objectives, also between role-based obligations and responsibilities of professionals and the rights of participants in such research. Recent schools of thought have largely revolved around when to return results to individuals that were obtained through research, but have clinical utility.  The subject of this thesis is to seek the answer to the question whether which method chosen could be called an ethical decision or a moral judgement on an ad-hoc basis. The main conclusions in this thesis are, that it is ethically justifiable to return such information in limited circumstances under certain conditions subject to the results of the data. The conditions are: (i) Findings suggest a life threatening condition of the individual or considerable risk, (ii) can be averted with clinical care (treatment, prevention and monitoring), (iii) reliability of the research results is ensured, (iv) benefits from the findings is greater than the risk and (v) the participant has agreed to obtain access to the findings. If a participant agrees to the conditions (v) on the return of results, then he/she can be granted access upon all other conditions fulfilled. The arguments I present here are that if a participant rejects condition (v), then that condition can still be turned over in exceptional cases if condition (i) is fulfilled. My assessment is that the limited cases are to be treated within the healthcare sector and feedback is provided by professionals specialized in genetic counseling. In addition, I am of the opinion that an individual should be given those kind of information with a face to face conversation. I am of the opinion regarding policy on data return, that a connection between genetic research and clinical care can be found, but only when it is possible to return data in specific cases to the healthcare system and the boundaries should not be crossed.
+\vfill
+\newpage
+
+%\chapter*{Preface}
+%Formála má sleppa og skal þá fjarlægja þessa blaðsíðu. Formáli skal hefjast á oddatölu blaðsíðu og nota skal Section Break (Odd Page).
+%
+%Ekki birtist blaðsíðutal á þessum fyrstu síðum ritgerðarinnar en blaðsíðurnar teljast með og hafa áhrif á blaðsíðutal sem birtist með rómverskum tölum fyrst á efnisyfirliti.
+%
+\tableofcontents
+\renewcommand{\chaptername}{Innihald}
+%\listoffigures
+%\listoftables
+
+\chapter*{Inngangur}
+Kveikjan að efnisvali mínu í þessari ritgerð er áhugi minn á málefnum sem snerta friðhelgi einkalífs og persónuvernd um upplýsingar. Fljótlega eftir að ég hóf nám í hagnýtri siðfræði var mér bent á siðferðileg álitamál sem tengjast endurgjöf erfðaupplýsinga úr vísindalegum erfðarannsóknum en þau snerta meðal annars persónuvernd og friðhelgi einkalífs. Ég hafði aldrei gefið málefnum gagnagrunnsrannsókna mikinn gaum að öðrum leyti en því að ég gaf Íslenskri erfðagreiningu lífsýni mitt fyrir löngu síðan í þágu framþróunar erfða-vísinda. Ég hef hins vegar lært margt og mikið um þetta svið síðan ég hóf smíði þessarar ritgerðar, ekki síst um mikilvægi þess að almennir borgarar láti sig slíkar rannsóknir varða en líti jafnframt á málefni þeim tengdum með gagnrýnum hug.
+Fram að þessu hafa siðferðileg viðmið, regluverk og lög um gagnagrunna verið á þann veg að þau standi vörð um greinarmun og mörk á milli vísindalegra erfðarannsókna og klínískrar umönnunar. Skýr skil hafa jafnframt verið á milli vísindalegra erfðarannsókna og klínískra erfðarannsókna hvað tilgang og markmið varðar, hlutverkabundar skyldur og ábyrgð fagfólks á hvoru sviði fyrir sig og réttindi þátttakenda slíkra rannsókna. Nú er hins vegar svo komið að þessi skýru skil eru byrjuð að færast til og mörkin á milli sviða ekki jafn afmörkuð og áður. Um leið og slíkt gerist þarf að takast á við nýja áskorun um hvernig haga eigi stjórnun og eftirliti með lífvísindum.\footnote{} Kallar það á endurskoðun siðferðilegra viðmiða, regluverka og laga um vísindalegar erfðarannsóknir og stefnumótun um málefni þeim tengdum.
+Eitt slíkt málefni fjallar um endurgjöf erfðaupplýsinga einstaklings sem fæst úr vísindalegri erfðarannsókn en hefur klíníska þýðingu. Í hefðbundnum skilningi vísindalegra erfðarannsókna geta þátttakendur ekki búist við persónulegum niðurstöðum úr slíkum rannsóknum því tilgangur og markmið þeirra er að öðlast betri þekkingu á erfðasjúkdómum, meðferð og þróun lyfja, vísindunum og almenningi í hag.  Nú er hins vegar svo komið að fram geta komið niðurstöður sem hafa slíkt vægi að talið er siðferðilega verjandi að birta þátttakanda slíkra rannsókna þær persónulegu upplýsingar, ef þær mæta
+
+\chapter{kafli  Kortlagning gagnagrunna}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+Meginumfjöllunarefni mitt í ritgerðinni er endurgjöf erfðaupplýsinga um einstaklinga sem fæst úr vísindalegri erfðarannsókn en hefur klíníska þýðingu. Í þessum kafla mun ég ræða um ólíkar tegundir gagnagrunna á heilbrigðissviði og mismunandi spurningar sem þeir vekja með tilliti til endurgjafar erfðaupplýsinga.
+
+Gagnagrunnur, eða lífsýnasafn, vísar til skipulagðrar söfnunar lífsýna og tengdra gagna, í þeim tilgangi að nota þau við rannsóknir í samtímanum og í ófyrirsjáanlegri framtíð. Gagnagrunnur er lífsýna- og upplýsingaauðlind sem hefur að geyma gögn um einstaklinga sem nota má við rannsóknir síðar meir.  Gagnagrunnar eru ekki nýir af nálinni því lífsýni, sem hægt er að erfðagreina, hafa verið geymd á spítulum og rannsóknarstofum, af ýmsum læknisfræðilegum eða vísindalegum ástæðum, í gegnum tíðina. Það sem hefur breyst síðustu tvo áratugi, með kortlagningu alls erfðamengis manna, bættri tækni og þróun í rannsóknum, er hins vegar markviss söfnun lífsýna, frá stórum hópi fólks, með það fyrir augum að geyma gögnin í gagnagrunnum til seinni tíma notkunar. Er það hin svokallaða lífsýna- og upplýsingaauðlind, sem um er rædd, en auk þess hefur gildi eldri gagnagrunna fengið meira vægi. Eru þessir gagnagrunnar uppbyggðir fyrir rannsóknir á ýmis konar erfðasjúkdómum en ekki beinlínis fyrir heilsuvernd.
+
+\section{Heading 2}
+
+\subsection{Heading 3}
+
+\subsubsection{Heading 4}
+
+\section{Title page, spine, and back page}
+
+\section{Thesis and Dissertation Authoring}
+ 
+\chapter{Conclusions}
+
+\chapter{References}
+
+\appendix
+\renewcommand{\chaptername}{Appendix}
+\chapter{Annað}
+
+%\bibliographystyle{apalike}
+%\bibliography{ritgerd}
+\end{document}
